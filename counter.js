@@ -1,28 +1,27 @@
 var clicks = 0;
-    function clickME() {
-        clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
+var buton1 = document.getElementById("increment")
+var buton2 = document.getElementById('reset')
+var link = document.getElementById("clicks")
 
- });
+function increment() {
+    clicks += 1;
+};
 
- function reset() {
- state.current = 0
+function reset() {
+   clicks = 0
 }
 
 function render() {
-  const screen =document.getElementById
-  screen.innerText = state.current;
+    link.innerText = clicks;
 }
 
-var button = document.createElement("button");
-button.innerHTML = "Click Me";
+buton1.addEventListener("click", function() {
+  increment()
+  render()
+})
 
-document.getElementById('IncrementButton')
 
-'click'
-
-function () {
-
-  increment ();
-  render();
-}
+buton2.addEventListener("click", function() {
+  reset()
+  render()
+})
